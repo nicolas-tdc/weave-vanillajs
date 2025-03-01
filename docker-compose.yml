@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  vanillajs:
+    build: ./build
+    container_name: vanillajs
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
