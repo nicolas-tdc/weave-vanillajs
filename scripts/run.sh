@@ -19,7 +19,7 @@ docker-compose down
 
 # Building and starting containers
 echo -e "\e[33mBuilding and starting container...\e[0m"
-docker-compose up --build -d
+docker-compose up --build --remove-orphans -d
 
 # Cleaning up unused Docker images
 echo -e "\e[33mCleaning up unused Docker images...\e[0m"
