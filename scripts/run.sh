@@ -5,17 +5,29 @@ set -e
 
 echo -e "\e[33mRunning vanillajs-sk...\e[0m"
 
-if [ $APP_ENV == "dev" ] && [ -f ".env.dev" ]; then
-    cp .env.dev .env
-fi
+# Stop existing containers
+(
+    echo -e "\e[33mStopping existing containers...\e[0m"
+    docker-compose down
+) &
 
-if [ $APP_ENV == "prod" ] && [ -f ".env.prod" ]; then
-    cp .env.prod .env
-fi
+# Copy environment files
+(
+    # Check if .env.dist file exists
+    if [ -f ".env.dist" ]; then
+        echo -e "\e[33mCopying dev environment file\e[0m"
+        cp .env.dist .env
+    else
+        echo -e "\e[31mError: .env.dist file not found\e[0m"
+        exit 1
+    fi
 
-# Stopping existing containers
-echo -e "\e[33mStopping existing containers...\e[0m"
-docker-compose down
+    echo -e "\e[32mEnvironment file ready!\e[0m"
+) &
+
+wait
+
+echo -e "\e[32mDocker compose ready!\e[0m"
 
 # Building and starting containers
 echo -e "\e[33mBuilding and starting container...\e[0m"

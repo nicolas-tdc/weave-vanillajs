@@ -1,5 +1,2 @@
-# deploy-sk specifics
-.env.dev
-.env.prod
-
-# VanillaJs specifics
+# vanillajs-sk specifics
+.env
