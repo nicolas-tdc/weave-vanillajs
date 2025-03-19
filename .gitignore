@@ -1,2 +1,3 @@
 # vanillajs-sk specifics
 .env
+docker-compose.yml
