@@ -1,2 +1,2 @@
 # weave-vanillajs specifics
-.env
+/.env*
