@@ -1,0 +1,4 @@
+services:
+  vanillajs:
+    volumes:
+      - ./build:/usr/share/nginx/html:ro
