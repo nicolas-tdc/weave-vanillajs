@@ -1,13 +1,48 @@
-# weave-vanillajs
+# weave-service
 
-## Setup
-cp .env.dist .env
+[Setup your service](#setup-your-service)
+[Available commands](#available-commands)
 
-## Start
-docker-compose up -d --build --remove-orphans
+## Setup your service
 
-## Stop
-docker-compose down
+- **Set your environment variables for each environment**
 
-## Reset (destructive!)
-docker-compose down -v
+Modify default-env files for remote modifications
+
+Copy env files to the service's root directory.
+Modify root environment files for local modifications
+
+## Available scripts and commands
+**Execute from your service's root directory**
+
+- **r | run**
+
+Starts the service
+```bash
+./weave.sh r
+```
+*Development mode*: -d|-dev
+
+- **k | kill**
+
+Stops the service
+```bash
+./weave.sh k
+```
+*Development mode*: -d|-dev
+
+- **log | log-available-ports**
+
+Logs the service's available ports
+```bash
+./weave.sh log
+```
+*Development mode*: -d|-dev
+
+- **bak | backup-task**
+
+Executes the service's backup-task
+```bash
+./weave.sh backup-task
+```
+*Development mode*: -d|-dev
