@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  front_vanillajs:
+  vanillajs:
     command: ["http-server", "build", "-p", "${PORT}"]
     volumes:
       - ./build:/app/build
