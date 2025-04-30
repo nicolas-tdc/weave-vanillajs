@@ -3,9 +3,12 @@ version: "3.9"
 services:
   vanillajs:
     container_name: vanillajs
-    image: nginx:alpine
+    build: ./build
     restart: always
     ports:
       - "${PORT}:${PORT}"
     env_file:
+      - ../../.env
       - .env
+    volumes:
+      - .:/app

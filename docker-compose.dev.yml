@@ -2,5 +2,6 @@ version: "3.9"
 
 services:
   vanillajs:
+    command: ["http-server", "build", "-p", "${PORT}", "--watch", "."]
     volumes:
-      - ./build:/usr/share/nginx/html:ro
+      - .:/app
