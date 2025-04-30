@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   vanillajs:
-    container_name: vanillajs
     build: ./build
     restart: always
     ports:
