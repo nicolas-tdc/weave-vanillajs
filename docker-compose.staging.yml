@@ -1,7 +1,3 @@
 version: "3.9"
 
-services:
-  vanillajs:
-    command: ["http-server", "build", "-p", "${PORT}"]
-    volumes:
-      - ./build:/app/build
+services: {}

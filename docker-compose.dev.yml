@@ -1,7 +1,5 @@
 version: "3.9"
 
 services:
-  vanillajs:
-    command: ["http-server", "build", "-p", "${PORT}", "--watch", "."]
-    volumes:
-      - .:/app
+  front:
+    command: ["browser-sync", "start", "--server", "build", "--files", "build", "--port", "${PORT}", "--no-open", "--host", "0.0.0.0"]

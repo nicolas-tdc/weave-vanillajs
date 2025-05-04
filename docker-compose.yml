@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  vanillajs:
+  front:
     build: ./build
     restart: always
     ports:
@@ -9,5 +9,6 @@ services:
     env_file:
       - ../../.env
       - .env
+    command: ["browser-sync", "start", "--server", "build", "--port", "${PORT}", "--no-open", "--host", "0.0.0.0", "--no-ui"]
     volumes:
-      - .:/app
+      - ./build:/app/build

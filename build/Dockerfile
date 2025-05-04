@@ -13,8 +13,8 @@ EXPOSE ${PORT:-3000}
 # Install the latest version of npm
 RUN npm install -g npm@11.3.0
 
-# Install http-server globally to serve static files
-RUN npm install -g http-server
+# Install browser-sync globally to serve static files
+RUN npm install -g browser-sync
 
 # Command to run the app using http-server (serving the current directory)
-CMD ["http-server", "build", "-p", "${PORT:-3000}"]
+CMD ["browser-sync", "start", "--server", "build", "--port", "${PORT:-3000}", "--host", "0.0.0.0", "--no-open", "--no-ui"]
