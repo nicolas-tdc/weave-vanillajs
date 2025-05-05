@@ -7,10 +7,6 @@
 
 - **Set your environment variables for each environment**
 
-Modify env-remote files for remote modifications
-
-Modify root environment files for local modifications
-
 ## Available scripts and commands
 **Execute from your service's root directory**
 
