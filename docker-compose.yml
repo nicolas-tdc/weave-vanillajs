@@ -7,7 +7,6 @@ services:
     ports:
       - "${PORT}:${PORT}"
     env_file:
-      - ../../.env
       - .env
     command: ["browser-sync", "start", "--server", "build", "--port", "${PORT}", "--no-open", "--host", "0.0.0.0", "--no-ui"]
     volumes:
